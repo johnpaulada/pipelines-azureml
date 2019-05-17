@@ -7,24 +7,18 @@ pool:
 steps:
 
 - task: AzureCLI@1
+  displayName: 'Install the CLI'
   inputs:
     azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
     scriptLocation: 'inlineScript'
     inlineScript: 'az extension add -n azure-cli-ml'
 
-# - task: AzureCLI@1
-#   displayName: 'Install the CLI'
-#   inputs:
-#     azureSubscription: '07dc9085-251e-4300-9fe5-254a6582b4c5'
-#     scriptLocation: inlineScript
-#     inlineScript: 'az extension add -n azure-cli-ml'
-
-# - task: AzureCLI@1
-#   displayName: 'Attach folder to workspace'
-#   inputs:
-#     azureSubscription: '07dc9085-251e-4300-9fe5-254a6582b4c5'
-#     scriptLocation: inlineScript
-#     inlineScript: 'az ml folder attach -w AzureMLOpsTest -g AutoMLOpsTest'
+- task: AzureCLI@1
+  displayName: 'Attach folder to workspace'
+  inputs:
+    azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml folder attach -w AzureMLOpsTest -g AutoMLOpsTest'
 
 # - task: AzureCLI@1
 #   displayName: 'Create compute for training'
