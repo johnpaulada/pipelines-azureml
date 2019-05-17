@@ -27,12 +27,12 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'az ml computetarget create amlcompute -n cpu --vm-size STANDARD_D2_V2 --max-nodes 4'
   
-# - task: AzureCLI@1
-#   displayName: 'Submit script run'
-#   inputs:
-#     azureSubscription: '07dc9085-251e-4300-9fe5-254a6582b4c5'
-#     scriptLocation: inlineScript
-#     inlineScript: 'az ml run submit-script -c sklearn -e test -d myenv.yml train.py'
+- task: AzureCLI@1
+  displayName: 'Submit script run'
+  inputs:
+    azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml run submit-script -c sklearn -e test -d myenv.yml train.py'
 
 # - task: AzureCLI@1
 #   displayName: 'Register model'
