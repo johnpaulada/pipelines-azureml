@@ -34,12 +34,12 @@ steps:
     scriptLocation: inlineScript
     inlineScript: 'az ml run submit-script -c sklearn -e test -d myenv.yml train.py'
 
-# - task: AzureCLI@1
-#   displayName: 'Register model'
-#   inputs:
-#     azureSubscription: '07dc9085-251e-4300-9fe5-254a6582b4c5'
-#     scriptLocation: inlineScript
-#     inlineScript: 'az ml model register -n mymodel -p sklearn_regression_model.pkl -t model.json'
+- task: AzureCLI@1
+  displayName: 'Register model'
+  inputs:
+    azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
+    scriptLocation: inlineScript
+    inlineScript: 'az ml model register -n mymodel -p sklearn_regression_model.pkl -t model.json'
 
 # - task: AzureCLI@1
 #   displayName: 'Deploy model'
