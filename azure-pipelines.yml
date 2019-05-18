@@ -39,14 +39,14 @@ steps:
   inputs:
     azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
     scriptLocation: inlineScript
-    inlineScript: 'az ml model register -n mymodel -p sklearn_regression_model.pkl -t model.json'
+    inlineScript: 'az ml model register -n skmodel -p sklearn_regression_model.pkl -t model.json'
 
 - task: AzureCLI@1
   displayName: 'Deploy model'
   inputs:
     azureSubscription: 'Azure Pass - Sponsorship(07dc9085-251e-4300-9fe5-254a6582b4c5)'
     scriptLocation: inlineScript
-    inlineScript: 'az ml model deploy -n mymodel -f model.json --ic inferenceConfig.yml --dc deploymentConfig.yml --overwrite'
+    inlineScript: 'az ml model deploy -n skmodel -f model.json --ic inferenceConfig.yml --dc deploymentConfig.yml --overwrite'
 
 # - task: AzureCLI@1
 #   displayName: 'Delete deployed service'
